@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Đồ án tốt nghiệp</title>
+        <!-- MATERIAL CDN-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" 
+        rel="stylesheet">
+        <!--STYLESHEET-->
+        <link rel="stylesheet" href="./style.css">
+        <!--Javascript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body onload="time()">
+        <div class="container">
+            <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="./images/logo.png">
+                        <h2>Food Delivery<span class="danger"> Robot</span></h2>
+                    </div>
+
+                    <div class="close" id="close-btn">
+                        <span class="material-icons-sharp">close</span>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <a href="./index.html"  class="active">
+                        <span class="material-icons-sharp">dashboard</span>
+                        <h3>Điều khiển</h3>
+                    </a>
+                    <a href="./Information.html">
+                        <span class="material-icons-sharp">perm_device_information</span>
+                        <h3>Thông tin</h3>
+                    </a>
+
+                    <a href="./LogOut.html">
+                        <span class="material-icons-sharp">logout</span>
+                        <h3>Log Out</h3>
+                    </a>
+                </div>
+            </aside>
+
+<!---------------------------- END OF ASIDE ------------------------------>
+
+            <main>
+                <h1>Điều khiển</h1>
+
+                <div id="clock"></div>
+                <form action="" id="form" method="POST">
+                    <div class="insights">
+                    
+                        <div class="sales">
+                            <span class="material-icons-sharp">update</span>
+                            <div class="left">
+                                <h2>Chọn thời gian giao</h2>
+                                <h1><input type="datetime-local" name="times" class="times"></h1>
+                            </div>
+                        </div>
+<!-------------------------- END OF time ------------------------>
+                        <div class="expenses">
+                            <span class="material-icons-sharp">meeting_room</span>
+                            <div class="left">
+                                <h2>Chọn phòng cần giao</h2>
+                                <div>
+                                    <select id="rooms" name="rooms">
+                                    <option value="1">Phòng số 1</option>
+                                    <option value="2">Phòng số 2</option>
+                                    <option value="3">Phòng số 3</option>
+                                    <option value="4">Phòng số 4</option>
+                                    <option value="5">Phòng số 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+<!------------------------- END OF room ------------------------>
+                        <div class="income">
+                            <span class="material-icons-sharp">emoji_food_beverage</span>
+                            <div class="left">
+                                <h2>Chọn số phần cơm được giao</h2>
+                                <div>
+                                    <select id="foods" name="foods">
+                                    <option value="0">Không giao cơm</option>
+                                    <option value="1">Giao 1 phần cơm</option>
+                                    <option value="2">Giao 2 phần cơm</option>
+                                    <option value="3">Giao 3 phần cơm</option>
+                                    <option value="4">Giao 4 phần cơm</option>
+                                    <option value="5">Giao 5 phần cơm</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+<!------------------------------------- END OF food ---------------------------->
+                    </div>
+                    <input type="submit" class="xacnhan" value="Xác Nhận">
+                </form>
+<!---------------------------------------END OF INSIGHTS--------------------------->
+
+                <div class="recent-orders">
+                    <h2>Chọn khẩu phần ăn</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thời gian</th>
+                                <th>Số phòng</th>
+                                <th>Số phần ăn</th>
+                                <th>Trạng thái</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="time"></td>
+                                <td>Phòng số 1</td>
+                                <td id="food[1]"></td>
+                                <td id="status[1]"></td>
+                              </tr>
+                              <tr>
+                                <td id="time"></td>
+                                <td>Phòng số 2</td>
+                                <td id="food[2]"></td>
+                                <td id="status[2]"></td>
+                              </tr> 
+                              <tr>
+                                <td id="time"></td>
+                                <td>Phòng số 3</td>
+                                <td id="food[3]"></td>
+                                <td id="status[3]"></td>
+                              </tr> 
+                              <tr>
+                                <td id="time"></td>
+                                <td>Phòng số 4</td>
+                                <td id="food[4]"></td>
+                                <td id="status[4]"></td>
+                              </tr> 
+                              <tr>
+                                <td id="time"></td>
+                                <td>Phòng số 5</td>
+                                <td id="food[5]"></td>
+                                <td id="status[5]"></td>
+                              </tr> 
+                        </tbody>
+                    </table>
+                    <a href="#">Hiển thị tất cả</a>
+                </div>
+            </main>
+<!------------------------------------------END OF MAIN --------------------------->
+
+            <div class="right">
+                <div class="top">
+                    <button id="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+                    <div class="theme-toggler">
+                        <span class="material-icons-sharp active">light_mode</span>
+                        <span class="material-icons-sharp">dark_mode</span>
+                    </div>
+                    <div class="profile">
+                        <div class="info">
+                            <p>Hey, <b>Huu Dung</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <div class="profile-photo">
+                            <img src="./images/huudung.jpg">
+                        </div>
+                    </div>
+                </div>
+<!----------------------------------END OF TOP-------------------------------->
+                <div class="recent-updates">
+                    <h2>Cập nhật thời tiết</h2>
+                    <div class="updates">
+                        <div class="update">
+                            <div class="profile-photo">
+                                <img src="./images/weither.png">
+                            </div>
+                            <div class="message">
+                                <p><b>Hồ Chí Minh</b> nắng gắt 34°C</p>
+                                <small class="text-muted"> 2 phút trước</small>
+                            </div>
+                        </div>
+                        <div class="update">
+                            <div class="profile-photo">
+                                <img src="./images/weither_rain.jpg">
+                            </div>
+                            <div class="message">
+                                <p><b>Hồ Chí Minh</b> mưa rào 24°C</p>
+                                <small class="text-muted"> 2 giờ trước</small>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+        <script type="text/javascript" src="./time.js"></script>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function(){
+    //code xu ly form
+    $(document).on('submit','#form', function(){
+      $.post("updateData.php",$('#form').serialize());
+    });
+    updateTable();
+  });
+  setInterval(updateTable,10000);
+  function updateTable(){
+    $.post("getData.php",
+    function(data_1){
+        var food = [data_1[0].room_1,data_1[0].room_2,data_1[0].room_3,data_1[0].room_4,data_1[0].room_5]
+        document.getElementById("time").innerHTML = data_1[0].datetime;
+        for (var i=1; i<6; i++){
+                document.getElementById("food["+i+"]").innerHTML = food[i-1];
+              }
+    })
+    
+    $.post("updateStatus.php",
+    function(data_2){
+        var temp;
+        var status = [data_2[0].room_1,data_2[0].room_2,data_2[0].room_3,data_2[0].room_4,data_2[0].room_5];
+        for (var i=1; i<6; i++){
+            switch(status[i-1]){
+                case "0":
+                    temp = "Đã xác nhận";
+                    break;
+                case "1":
+                    temp = "Đã giao";
+                    break;
+                case "2":
+                    temp = "Không có người nhận";
+                    break;
+            }
+            document.getElementById("status["+i+"]").innerHTML = temp;
+        }
+    })
+    
+}
+</script>
